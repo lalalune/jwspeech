@@ -1,0 +1,2 @@
+# for all wav files in wavs folder, resample with ffmpeg to 22050 Hz mono and save to the "processed" folder
+for wav in wavs/*.wav; do ffmpeg -i $wav -ac 1 -ar 22050 -acodec pcm_s16le -y processed/$(basename $wav .wav).wav; done
